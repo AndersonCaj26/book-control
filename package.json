@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/AndersonCaj26/book-control/issues"
   },
-  "homepage": "https://github.com/AndersonCaj26/book-control#readme"
+  "homepage": "https://github.com/AndersonCaj26/book-control#readme",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "nodemon": "^2.0.6"
+  }
 }

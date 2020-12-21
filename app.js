@@ -1,16 +1,38 @@
 const express = require('express');
 const app = express();
-const handlebars = require('express-handlebars');
+const loginRouter= require('./routers/login');
+const passport = require('passport');
+const session = require('express-session');
+require('./auth')(passport);
 
-//settings
+const authenticationMiddleware = (req, res, next) => {
+    if (req.isAuthenticated()) return next();
+    else res.redirect('/');
+}
+
+
+//settings and middlewares
 app.set('view engine', 'ejs');
+app.use(express.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
+app.use(session({
+    secret: 'esse segredo deve estar em variável de ambiente',
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        maxAge: 30 * 60 * 1000
+    }
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 
 //routers
-app.get('/', (req, res) => {
-    res.status(400).render('login');
+app.use('/', loginRouter);
+app.get('/home', authenticationMiddleware, (req, res) => {
+    res.render('home');
 });
+
 
 //activating server
 app.listen(8081, () => {

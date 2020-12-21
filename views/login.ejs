@@ -6,13 +6,15 @@
     <link rel="stylesheet" href="css/login.css">
     <title>Login</title>
 </head>
-<body>
-    <form action="">
+<body id="login-root">
+    <form id="login-form" action="/" method="POST">
         <h1>Sistema de Controle de Livros</h1>
         <input type="text" name="username" placeholder="Usuário" />
-        <input type="password" name="password" placeholder="Senha"/>
+        <input type="password" name="password" placeholder="Senha">
         <input type="submit" value="Entrar">
+        <% if (message) { %>
+            <p> <%= message %> </p>
+        <% } %>
     </form>
-
 </body>
 </html>

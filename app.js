@@ -3,7 +3,9 @@ const app = express();
 const loginRouter= require('./routers/login');
 const passport = require('passport');
 const session = require('express-session');
+require('dotenv').config();
 require('./auth')(passport);
+
 
 const authenticationMiddleware = (req, res, next) => {
     if (req.isAuthenticated()) return next();
@@ -16,7 +18,7 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
 app.use(session({
-    secret: 'esse segredo deve estar em variável de ambiente',
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     cookie: {

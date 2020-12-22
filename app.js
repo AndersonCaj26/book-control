@@ -38,6 +38,6 @@ app.get('/home', authenticationMiddleware, (req, res) => {
 
 //activating server
 app.listen(8081, () => {
-    console.log('Server on URL http://localhost:8081 ');
+    console.log(process.env.APP_URL);
 });
 

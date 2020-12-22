@@ -37,7 +37,5 @@ app.get('/home', authenticationMiddleware, (req, res) => {
 
 
 //activating server
-app.listen(8081, () => {
-    console.log(process.env.APP_URL);
-});
+app.listen(process.env.PORT || 3000);
 

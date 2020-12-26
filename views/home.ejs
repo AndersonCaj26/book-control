@@ -3,9 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Reserva</title>
+    <link rel="stylesheet" href="css/reserva.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 </head>
 <body>
-    <h1>Home</h1>
+    <div id="header">
+        <div id="logo">
+            Sistema de Controle de Livros
+        </div>  
+        <a href="#" id="menu" onclick="menu()">
+            <div>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            Menu
+        </a>
+        <div id="menu-option" value="false">
+            <div>
+                <a href="#" id="reserva">
+                    <span>Reservas</span>
+                    <i class="fas fa-clipboard-list fa-3x" ></i>
+                </a>
+                <a href="#" id="aluno">
+                    <span>Alunos</span>
+                    <i class="fas fa-user-graduate fa-3x"></i>
+                </a>
+            </div>
+            <div>
+                <a href="#" id="livro">
+                    <span>Livros</span>
+                    <i class="fas fa-book fa-3x"></i>
+                </a>
+                <a href="#" id="sair">
+                    <span>Sair</span>
+                    <i class="fas fa-sign-out-alt fa-3x"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="main" value="true">
+        <h1>Reservas</h1>
+        <form>
+            <select name="aluno" id="aluno">
+                <option value="">Selecione um aluno...</option>
+                <option value="A">Anderson</option>
+                <option value="">Francisco</option>
+            </select>
+            <select name="livro" id="livro">
+                <option value="">Selecione um livro...</option>
+            </select>
+            <input type="submit" value="Registrar">
+
+        </form>
+    </div>
+
+    
+    <script src="js/reserva.js"></script>
 </body>
 </html>

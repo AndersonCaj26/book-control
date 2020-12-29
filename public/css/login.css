@@ -7,7 +7,7 @@
 }
 
 #login-root {
-    background-image: url("/img/background-login.jpg");
+    background-image: url("/img/background-login-big.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -55,7 +55,7 @@
     text-align: center;
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 550px) {
     * {
         font-size: 16px;
     }
